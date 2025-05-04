@@ -186,7 +186,7 @@ app.get('/', (req, res) => {
 });
 
 // Jalankan server di port 8000
-const PORT = 8080;
+const PORT = 6750;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
