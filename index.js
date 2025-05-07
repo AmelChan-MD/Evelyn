@@ -20,8 +20,6 @@ let db = JSON.parse(fs.readFileSync('./database.json'));
 function saveDB() {
   fs.writeFileSync('./database.json', JSON.stringify(db, null, 2));
 }
-const express = require('express');
-const app = express();
 const moment = require('moment')
 const chalk = require('chalk')
 const logger = require('pino')
@@ -178,17 +176,6 @@ const reconnect = new Spinner(chalk.redBright(` Reconnecting WhatsApp Bot`))
             console.error("Error di messages.upsert:", err);
         }
     }
-});
-
-// Contoh route
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
-
-// Jalankan server di port 8000
-const PORT = 6750;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
 });
 	conn.reply = (from, content, msg) => conn.sendMessage(from, { text: content }, { quoted: msg })
     
